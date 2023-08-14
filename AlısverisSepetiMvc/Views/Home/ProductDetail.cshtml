@@ -1,0 +1,17 @@
+﻿@model ProductListDto
+<div class="productdetail">
+    <div class="imgbox">
+        <img src="/image/@Model.ProductImage" alt="">
+    </div>
+    <div class="detailbox">
+        <p>@Model.ProductName</p>
+        <p>@Model.ProductPrice</p>
+        <div class="order">
+            <form asp-page="/card" method="post">
+            <input type="hidden" name="id" value="@Model.Id" />
+            <input type="number" name="productnumber" value="0">
+            <button>Sepete Ekle</button>
+            </form>
+        </div>
+    </div>
+</div>

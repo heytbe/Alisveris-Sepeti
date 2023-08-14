@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+}
+
+img{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+a{
+    color: rgba(255,255,255,.8);
+}
+
+header{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    background: rgb(102, 58, 58);
+}
+
+.menu{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 80%;
+    height: 50px;
+    overflow: hidden;
+    padding: 0 15px 0 15px;
+    margin: 0 auto;
+}
+
+.menu ul li{
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.menu ul li a{
+    color: aliceblue;
+    margin-right: 20px;
+}
+
+.menu ul li a:hover{
+    color: rgb(156, 195, 226);
+}
+
+.menu .icon i{
+    color: rgba(255,255,255,.6);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.menu .icon p{
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background: #fff;
+    top: 5px;
+    right: 0;
+    text-align: center;
+    font-size: 15px;
+}
+
+main{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.mainbox{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.mainbox .box10{
+    position: relative;
+    display: block;
+    float: left;
+    width: 10%;
+    height: auto;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.mainbox .box90{
+    position: relative;
+    display: block;
+    width: 90%;
+    height: auto;
+    overflow: hidden;
+}
+
+.box{
+    position: relative;
+    display: block;
+    width: calc(100% + 20px);
+    height: auto;
+    overflow: hidden;
+}
+
+.box a{
+    position: relative;
+    display: block;
+    float: left;
+    width: calc(20% - 20px);
+    height: auto;
+    overflow: hidden;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.box .boxcategory{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    padding: 10px;
+    border: thin solid #000;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.boxcategory .textarea{
+    position: relative;
+    display: block;
+    float: left;
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.boxcategory .textarea .size{
+    position: relative;
+    display: inline-block;
+    padding: 5px;
+    background-color: cadetblue;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    margin-top: 15px;
+}
+
+.boxcategory .imgarea{
+    position: relative;
+    display: block;
+    width: 60%;
+    height: auto;
+    overflow: hidden;
+}
+
+.productbox{
+    position: relative;
+    display: block;
+    float: left;
+    width: calc(10% - 20px);
+    height: auto;
+    margin-top: 10px;
+    margin-right: 20px;
+    overflow: hidden;
+    background-color: cadetblue;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    padding: 5px;
+}
+
+.productbox a{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.productbox .textbox{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.productbox .textbox p{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 5px;
+}
+
+.productbox .textbox button{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all ease-in-out 300ms;
+    -webkit-transition: all ease-in-out 300ms;
+    -moz-transition: all ease-in-out 300ms;
+    -ms-transition: all ease-in-out 300ms;
+    -o-transition: all ease-in-out 300ms;
+}
+
+.productbox .textbox button:hover{
+    background-color: rgb(96, 90, 105);
+    color: #fff;
+}
+
+#productsort{
+    position: relative;
+    display: block;
+    float: right;
+    height: 30px;
+    border: thin solid grey;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    padding: 5px;
+}
+
+.productdetail{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    width: 1000px;
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+    border: thin solid rgba(0,0,0,.2);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.productdetail .imgbox,
+.productdetail .detailbox{
+    position: relative;
+    display: block;
+    width: 50%;
+    height: auto;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.productdetail .detailbox{
+    background-color: rgb(228, 222, 222);
+}
+
+.productdetail .order{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.order input{
+    width: 50px;
+    height: 30px;
+    padding: 5px;
+}
+
+.order button{
+    height: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.order button:hover{
+    background-color: rgb(96, 90, 105);
+    color: #fff;
+}
+
+header .modalcard{
+    position: absolute;
+    display: none;
+    width: 350px;
+    height: auto;
+    max-height: 100px;
+    overflow: hidden;
+    overflow-y: auto;
+    top: 50px;
+    right: 10px;
+    z-index: 99;
+    background-color: rgb(177, 177, 194);
+    padding: 5px;
+    transition: all ease-in 300ms;
+    -webkit-transition: all ease-in 300ms;
+    -moz-transition: all ease-in 300ms;
+    -ms-transition: all ease-in 300ms;
+    -o-transition: all ease-in 300ms;
+}
+
+header .modalcard .modalproduct{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-bottom: thin solid grey;
+}
+
+header .modalcard .modalproduct .imgbox{
+    position: relative;
+    display: block;
+    float: left;
+    width: 45%;
+    height: auto;
+    overflow: hidden;
+}
+
+header .modalcard .modalproduct .textbox{
+    position: relative;
+    display: block;
+    width: 55%;
+    height: auto;
+    overflow: hidden;
+}
+
+.customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .customers td, .customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  .customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  .customers .tablebutton{
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .tablebutton i{
+    cursor: pointer;
+    color: blue;
+  }
+
+  .tablebutton i:hover{
+    color: rgb(82, 127, 185);
+  }
+
+  .blue th{
+    background-color: rgb(90, 90, 143);
+  }
+
+  .none{
+    display: none;
+  }
+
+  .siparisresim{
+    width: 100px;
+    height: 100px;
+  }

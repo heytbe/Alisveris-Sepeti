@@ -1,0 +1,30 @@
+﻿@model List<ProductListDto>
+<div class="mainbox">
+    <select name="" id="productsort">
+        <option value="">Sırala</option>
+        <option value="">Artan Fiyat</option>
+        <option value="">Azalan Fiyat</option>
+    </select>
+    <div class="box10">
+        arama
+    </div>
+    <div class="box90">
+        <div class="box">
+            @foreach (var item in Model)
+            {
+                <div class="productbox">
+                    <a asp-action="productdetail" asp-route-id="@item.Id">
+                        <div class="imgbox">
+                            <img src="/image/@item.ProductImage" alt="">
+                        </div>
+                    </a>
+                    <div class="textbox">
+                        <p>@item.ProductName</p>
+                        <p>@item.ProductPrice</p>
+                        <button>Sepete Ekle</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

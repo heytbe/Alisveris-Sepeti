@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="trTR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/heytbecss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <title>Ana Sayfa</title>
+</head>
+
+<body>
+    <div id="tumsayfaalani">
+        <div class="menucontainer floatleft">
+            <div class="menu">
+                <div class="fullscreen flex-row-center menulogoarea paddingfull10">
+                    <i class="fa-brands fa-square-pied-piper"></i>
+                    <span class="logotext">Card</span>
+                </div>
+                <div class="fullscreen menuarea paddingfull10">
+                    <small class="fullscreen">Menu</small>
+                    <ul class="fullscreen topmenu">
+                        <li>
+                            <a class="fullscreen" asp-controller="home" asp-action="index">
+                                <i class="fa-solid fa-house-circle-check"></i><span>
+                                    Ana Sayfa
+                                </span>
+                            </a>
+                        </li>
+                        <li class="submenuli">
+                            <div class="fullscreen flex-row-between submenutitle">
+                                <div class="fullscreen">
+                                    <i class="fa-solid fa-ticket"></i>
+                                    <span>Kategori İşlemleri</span>
+                                </div>
+                                <i class="fa-solid fa-caret-down menuopen"></i>
+                            </div>
+                            <ul class="fullscreen submenu">
+                                <li>
+                                    <a asp-controller="category" asp-action="index"><i class="fa-solid fa-plus"></i><span>Kategori</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="submenuli">
+                            <div class="fullscreen flex-row-between submenutitle">
+                                <div class="fullscreen">
+                                    <i class="fa-solid fa-camera-retro"></i>
+                                    <span>Ürün İşlemleri</span>
+                                </div>
+                                <i class="fa-solid fa-caret-down menuopen"></i>
+                            </div>
+                            <ul class="fullscreen submenu">
+                                <li>
+                                    <a asp-controller="product" asp-action="index"><i class="fa-solid fa-plus"></i><span>Ürünler</span></a>
+                                </li>
+                                <li>
+                                    <a asp-controller="product" asp-action="productcreate"><i class="fa-solid fa-plus"></i><span>Ürün Ekle</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="submenuli">
+                            <div class="fullscreen flex-row-between submenutitle">
+                                <div class="fullscreen">
+                                    <i class="fa-solid fa-camera-retro"></i>
+                                    <span>Şiparişler</span>
+                                </div>
+                                <i class="fa-solid fa-caret-down menuopen"></i>
+                            </div>
+                            <ul class="fullscreen submenu">
+                                <li>
+                                    <a asp-controller="order" asp-action="index"><i class="fa-solid fa-plus"></i><span>Ürünler</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container floatright">
+            <header class="fullscreen height50 backgroundcolorwhite paddingfull10">
+                <div class="headerarea flex-row-between">
+                    <div class="section">
+                        <i class="fa-solid fa-arrow-left-long menuopenclosebtn"></i>
+                    </div>
+                </div>
+            </header>
+            <main class="fullscreen">
+                <div class="fullscreen maincontainer paddingfull20">
+                    @RenderBody()
+                </div>
+            </main>
+            <footer></footer>
+        </div>
+    </div>
+    <script src="~/js/script.js"></script>
+</body>
+
+</html>

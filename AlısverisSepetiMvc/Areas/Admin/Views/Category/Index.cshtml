@@ -1,0 +1,105 @@
+﻿@using AlısverisSepetiMvc.Models.ViewModel;
+@model CategoryVm
+
+<form class="fullscreen" action="" method="post" enctype="multipart/form-data">
+    <div class="flex-row-between maintitle">
+        <span class="spanTitle25">Kategori İşlemleri</span>
+        <button class="formaddbtn borderradius5">Ekle</button>
+    </div>
+    <div class="witdhcalc8020 backgroundcolorwhite floatleft marginright20 margintop20 borderradius5 paddingfull20">
+        <div class="fullscreen">
+            <div class="witdh1020 floatleft imagepreview">
+                <input type="file" asp-for="CreateDto.CategoryImage" class="none" id="imgpreview">
+                <label for="imgpreview"><i class="fa-solid fa-image"></i></label>
+                <img src="" alt="aaaaaaa" class="none">
+            </div>
+            <div class="witdh9020 ">
+                <div class="input-group2">
+                    <label class="fullscreen" asp-for="CreateDto.CategoryName">Kategori İsmi : </label>
+                    <div class="fullscreen">
+                        <input class="margintop5" type="text" asp-for="CreateDto.CategoryName"
+                               placeholder="Kategori İsmi">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fullscreen margintop20">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>
+                            Sıra
+                        </th>
+                        <th>
+                            Resim
+                        </th>
+                        <th>
+                            Ad
+                        </th>
+                        <th>
+                            Aktif/Pasif
+                        </th>
+                        <th>
+                            Color
+                        </th>
+                        <th>
+                            İşlemler
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Category.Count() == 0)
+                    {
+                        <tr colspan="6">
+                            <td>Kategori Yok</td>
+                        </tr>
+                    }
+                    else
+                    {
+                        var i = 0;
+                        foreach (var item in Model.Category)
+                        {
+                            <tr>
+                                <td>
+                                    @(i = i + 1)
+                                </td>
+                                <td>
+                                    <img src="/image/@item.CategoryImage" alt="">
+                                </td>
+                                <td>
+                                    @item.CategoryName
+                                </td>
+                                <td>
+                                    @item.CategoryCheck
+                                </td>
+                                <td>
+                                    @item.CategoryColor
+                                </td>
+                                <td>
+                                    sil,Güncelle
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="witdh20 backgroundcolorwhite margintop20 borderradius5 paddingfull20">
+        <div class="input-group2">
+            <label class="fullscreen" asp-for="CreateDto.CategoryCheck">Aktif/Pasif :</label>
+            <div class="fullscreen">
+                <select class="margintop5" asp-for="CreateDto.CategoryCheck" id="">
+                    <option value="1">Aktif</option>
+                    <option value="0">Pasif</option>
+                </select>
+            </div>
+        </div>
+        <div class="input-group2">
+            <label class="fullscreen" asp-for="CreateDto.CategoryColor">Color :</label>
+            <div class="fullscreen">
+                <input class="margintop5" type="text" asp-for="CreateDto.CategoryColor" placeholder="Renk">
+            </div>
+        </div>
+    </div>
+</form>

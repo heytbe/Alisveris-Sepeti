@@ -1,0 +1,55 @@
+﻿@using AlısverisSepetiMvc.Models.Dto;
+@model ProductCreateDto
+
+<form class="fullscreen" action="" method="post" enctype="multipart/form-data">
+    <div class="flex-row-between maintitle">
+        <span class="spanTitle25">Ürün İşlemleri</span>
+        <button class="formaddbtn borderradius5">Ekle</button>
+    </div>
+    <div class="witdhcalc8020 backgroundcolorwhite floatleft marginright20 margintop20 borderradius5 paddingfull20">
+        <div class="fullscreen">
+            <div class="witdh1020 floatleft imagepreview">
+                <input type="file" asp-for="ProductImage" class="none" id="imgpreview">
+                <label for="imgpreview"><i class="fa-solid fa-image"></i></label>
+                <img src="" alt="aaaaaaa" class="none">
+            </div>
+            <div class="witdh9020 ">
+                <div class="input-group2">
+                    <label class="fullscreen" asp-for="ProductName">Ürün İsmi : </label>
+                    <div class="fullscreen">
+                        <input class="margintop5" type="text" asp-for="ProductName"
+                               placeholder="Ürün İsmi">
+                    </div>
+                </div>
+            </div>
+            <div class="witdh9020 ">
+                <div class="input-group2">
+                    <label class="fullscreen" asp-for="ProductPrice">Ürün Fiyatı : </label>
+                    <div class="fullscreen">
+                        <input class="margintop5" type="text" asp-for="ProductPrice"
+                               placeholder="Ürün Fiyatı">
+                    </div>
+                </div>
+            </div>
+            <div class="witdh9020" style="float:right;">
+                <div class="input-group2">
+                    <label class="fullscreen" asp-for="CategoryId">Category İsmi : </label>
+                    <div class="fullscreen">
+                        <select asp-for="CategoryId" asp-items="ViewBag.Category"></select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="witdh20 backgroundcolorwhite margintop20 borderradius5 paddingfull20">
+        <div class="input-group2">
+            <label class="fullscreen" asp-for="ProductCheck">Aktif/Pasif :</label>
+            <div class="fullscreen">
+                <select class="margintop5" asp-for="ProductCheck" id="">
+                    <option value="1">Aktif</option>
+                    <option value="0">Pasif</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</form>

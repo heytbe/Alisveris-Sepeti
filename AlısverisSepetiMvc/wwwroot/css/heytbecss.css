@@ -1,0 +1,284 @@
+.fullscreen {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.absolutecenter{
+    position: absolute;
+    display: block;
+    width: 60%;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    right: 0;
+    bottom: 0;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    padding: 20px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.none{
+    display: none;
+}
+
+.witdhcalc8020{
+    position: relative;
+    display: block;
+    width: calc(80% - 20px);
+    height: auto;
+    overflow: hidden;
+}
+
+.witdh1020{
+    position: relative;
+    display: block;
+    width: calc(10% - 20px);
+    height: auto;
+    overflow: hidden;
+}
+
+.witdh20{
+    position: relative;
+    display: block;
+    width: 20%;
+    height: auto;
+    overflow: hidden;
+}
+
+.witdh3020{
+    position: relative;
+    display: block;
+    width: calc(30% - 20px);
+    height: auto;
+    overflow: hidden;
+}
+
+.witdh9020{
+    position: relative;
+    display: block;
+    width: calc(90% - 20px);
+    height: auto;
+    overflow: hidden;
+}
+
+.witdh50{
+    position: relative;
+    display: block;
+    width: 50%;
+    height: auto;
+    overflow: hidden;
+}
+
+.paddingfull10 {
+    padding: 10px;
+}
+
+.paddingfull20 {
+    padding: 20px;
+}
+
+.menuactive {
+    border: thin solid #b1b1b1;
+    background-color: #121316;
+}
+
+.floatleft {
+    float: left;
+}
+
+.floatright{
+    float: right;
+}
+
+.height35 {
+    height: 35px;
+}
+
+.height50 {
+    height: 50px;
+}
+
+.heightyuzde100{
+    height: 100%;
+}
+
+.backgroundcolorwhite {
+    background-color: #fff;
+}
+
+.backgroundcolorgrey{
+    background-color: #b1b1b1;
+}
+
+.flex-row-between {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.flex-row-center {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.section {
+    position: relative;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+}
+
+.spanTitle25 {
+    font-size: 25px;
+}
+
+.margintop5{
+    margin-top: 5px;
+}
+
+.margintop20{
+    margin-top: 20px;
+}
+
+.marginright20{
+    margin-right: 20px;
+}
+
+.marginbottom20{
+    margin-bottom: 20px;
+}
+
+.formaddbtn {
+    background-color: #406186;
+    border: none;
+    color: white;
+    padding: 15px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.formaddbtn:hover {
+   background-color: #3870b4;
+}
+
+.borderradius5{
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+#formcreate{
+    position: relative;
+    display: block;
+    width: 60%;
+    height: auto;
+    overflow: hidden;
+    border: none;
+    outline: none;
+}
+
+.input-group,
+.input-group2{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.input-group label{
+    position: relative;
+    display: block;
+    float: left;
+    width: 30%;
+    height: auto;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    text-align: left;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea{
+    position: relative;
+    display: block;
+    width: 50%;
+    height: 35px;
+    overflow: hidden;
+    padding: 5px;
+    border-radius: 5px;
+    border: thin solid gainsboro;
+    outline: none;
+}
+
+.input-group textarea{
+    height: 100px;
+}
+
+.input-group2 label{
+    position: relative;
+    display: block;
+    float: left;
+    width: 100%;
+    height: auto;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    text-align: left;
+}
+
+.input-group2 input,
+.input-group2 select,
+.input-group2 textarea{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 35px;
+    overflow: hidden;
+    padding: 5px;
+    border-radius: 5px;
+    border: thin solid gainsboro;
+    outline: none;
+}
+
+.input-group2 textarea{
+    height: 100px;
+    margin-top: 5px;
+}
+
+img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}

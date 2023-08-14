@@ -1,0 +1,15 @@
+﻿@model Order
+
+<form method="post" asp-action="CheckOut">
+    <div>
+        <label asp-for="Name"></label>
+        <input style="border:thin solid #000;" asp-for="Name" />
+    </div>
+    <br />
+    <div>
+        <label asp-for="Adres"></label>
+        <input style="border:thin solid #000;" asp-for="Adres" />
+    </div>
+    <br />
+    <button style="padding:5px 15px 5px 15px;" type="submit">Siparişi Tamamla</button>
+</form>

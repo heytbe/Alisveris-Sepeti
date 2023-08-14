@@ -1,0 +1,18 @@
+﻿@model List<CategoryListDto>
+
+<div class="box">
+    @foreach (var item in Model)
+    {
+        <a asp-controller="home" asp-action="categoryby" asp-route-id="@item.Id">
+            <div class="boxcategory" style="background-color:@item.CategoryColor;">
+                <div class="textarea">
+                    <p>@item.CategoryName</p>
+                    <p class="size">@Model.Count()</p>
+                </div>
+                <div class="imgarea">
+                    <img src="/image/@item.CategoryImage" alt="">
+                </div>
+            </div>
+        </a>
+    }
+</div>

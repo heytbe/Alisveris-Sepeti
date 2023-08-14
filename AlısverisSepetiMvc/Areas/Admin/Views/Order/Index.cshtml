@@ -1,0 +1,77 @@
+﻿@model List<Order>
+
+<table class="customers">
+    <thead>
+    <th>Sıra</th>
+    <th>Müşteri Adı</th>
+    <th>Ürün Sayısı</th>
+    <th>Tarih</th>
+    <th>Toplam Fiyat</th>
+    <th>Detay</th>
+    </thead>
+    <tbody>
+        @{
+            var i = 0;
+        }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @(i = i +1)
+                </td>
+                <td>@item.Name</td>
+                <td>
+                    @item.Lines.Count()
+                </td>
+                <td>
+                    @item.OrderAt
+                </td>
+                <td>
+                  @(item.Lines.Sum(x => (x.Product.ProductPrice * x.Quantity)).ToString("c2"))
+                </td>
+                <td class="tablebutton">
+                    <i class="fa-regular fa-square-caret-down"></i>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" class="none childtable">
+                    <table class="customers products blue">
+                        <thead>
+                        <th>
+                            Resim
+                        </th>
+                        <th>
+                            Ürün
+                        </th>
+                        <th>
+                            Sayı
+                        </th>
+                        <th>
+                            Fiyat
+                        </th>
+                        </thead>
+                        <tbody>
+                            @foreach (var item2 in item.Lines)
+                            {
+                                <tr>
+                                    <td>
+                                        <img src="/image/@item2.Product.ProductImage" class="siparisresim" alt="">
+                                    </td>
+                                    <td>
+                                        @item2.Product.ProductName
+                                    </td>
+                                    <td>
+                                        @item2.Quantity
+                                    </td>
+                                    <td>
+                                        @((item2.Product.ProductPrice * item2.Quantity).ToString("c2"))
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

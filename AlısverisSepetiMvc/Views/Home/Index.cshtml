@@ -1,0 +1,75 @@
+﻿@model List<ProductListDto>
+<div class="mainbox">
+    <select name="" id="productsort">
+        <option value="">Sırala</option>
+        <option value="">Artan Fiyat</option>
+        <option value="">Azalan Fiyat</option>
+    </select>
+    <div class="box10">
+        arama
+    </div>
+    <div class="box90">
+        <div class="box">
+            @foreach (var item in Model)
+            {
+                <div class="productbox">
+                    <a asp-action="productdetail" asp-route-id="@item.Id">
+                        <div class="imgbox">
+                            <img src="/image/@item.ProductImage" alt="">
+                        </div>
+                    </a>
+                    <div class="textbox">
+                        <p>@item.ProductName</p>
+                        <p>@item.ProductPrice</p>
+                        <form class="form" method="post">
+                            <input type="hidden" value="@item.Id" name="id">
+                            <button type="submit" class="button">Sepete Ekle</button>
+                        </form>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<script>
+    let form = document.querySelectorAll(".form");
+    for (let i = 0; i < form.length; i++) {
+        form[i].addEventListener("submit", function (e) {
+            e.preventDefault();
+            let hidden = this.children[0].value;
+            let formData = {
+                id: hidden,
+            }
+            $.ajax({
+                url: "/card",
+                type: "POST",
+                data: formData,
+                headers:
+                {
+                    "RequestVerificationToken": $('input:hidden[name="__RequestVerificationToken"]').val()
+                },
+                success: function (result) {
+                    if ($(result).html() !== "") {
+                        $(".modalcard").html("");
+                        for (let i = 0; i < $(result).find(".products").find("tbody").children().length; i++) {
+                            let html = `<div class="modalproduct">
+                                                <div class="imgbox">
+                                                        <img src="${$(result).find(".products").find("tbody").children().eq(i).children("td:nth-child(1)").children("img").attr("src")}" alt="">
+                                                </div>
+                                                <div class="textbox">
+                                                            ${$(result).find(".products").find("tbody").children().eq(i).children("td:nth-child(2)").text()}
+                                                            ${$(result).find(".products").find("tbody").children().eq(i).children("td:nth-child(3)").text()}
+                                                            ${$(result).find(".products").find("tbody").children().eq(i).children("td:nth-child(4)").text()}
+                                                </div>
+                                                </div>`;
+
+                        $(".modalcard").append(html);
+                    }
+                }
+
+                    $(".icon p").text($(".modalcard").children().length);
+            }
+                });
+    });
+        }
+</script>

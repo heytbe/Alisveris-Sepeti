@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/homestyle.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <title>Ana Sayfa</title>
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <ul>
+                <li>
+                    <a asp-controller="home">Ana Sayfa</a>
+                </li>
+                <li>
+                    <a asp-controller="category" asp-action="Index">Kategoriler</a>
+                </li>
+                <li>
+                    <a asp-page="/card">Şiparişlerim</a>
+                </li>
+                <li>
+                    <a href="/admin">Admin</a>
+                </li>
+            </ul>
+            <div class="icon">
+                <i class="fa-solid fa-basket-shopping"></i>
+                <p>0</p>
+            </div>
+        </div>
+        <div class="modalcard">
+        </div>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <script src="~/js/scriptjs.js"></script>
+</body>
+</html>

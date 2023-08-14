@@ -1,0 +1,88 @@
+﻿@page
+@using AlısverisSepetiMvc.Shared;
+@model CardModel
+@{
+}
+
+<table class="customers">
+    <thead>
+    <th>Şipariş ID</th>
+    <th>Ürün Sayısı</th>
+    <th>Tarih</th>
+    <th>Durum</th>
+    <th>Toplam Fiyat</th>
+    <th>Detay</th>
+    <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                1
+            </td>
+            <td>
+                @Model._card.CardLines.Count()
+            </td>
+            <td>
+                @DateTime.Now
+            </td>
+            <td>
+                Beklemede
+            </td>
+            <td>
+                @(Model._card.CardLines.Sum(x => x.Product.ProductPrice * x.Quantity).ToString("c2"))
+            </td>
+            <td class="tablebutton">
+                <i class="fa-regular fa-square-caret-down"></i>
+            </td>
+            <td><a style="color:#000;" asp-controller="order" asp-action="checkout">Şiparişi Tamamla</a></td>
+        </tr>
+        <tr>
+            <td colspan="6" class="none childtable">
+                <table class="customers products blue">
+                    <thead>
+                    <th>
+                        Resim
+                    </th>
+                    <th>
+                        Ürün
+                    </th>
+                    <th>
+                        Sayı
+                    </th>
+                    <th>
+                        Fiyat
+                    </th>
+                    <th>
+                        İşlemler
+                    </th>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model._card?.CardLines ?? Enumerable.Empty<CardLine>())
+                        {
+                            <tr>
+                                <td>
+                                    <img src="/image/@item.Product.ProductImage" class="siparisresim" alt="">
+                                </td>
+                                <td>
+                                   @item.Product.ProductName
+                                </td>
+                                <td>
+                                    @item.Quantity
+                                </td>
+                                <td>
+                                    @((item.Product.ProductPrice * item.Quantity).ToString("c2"))
+                                </td>
+                                <td>
+                                    <form method="post" asp-page-handler="Remove">
+                                        <input type="hidden" name="id" value="@item.Product.Id">
+                                        <button type="submit">Sil</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>
